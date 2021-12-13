@@ -1,0 +1,107 @@
+<html>
+<head>
+    <style>
+      #logo-img {
+        position: absolute;
+        margin: 1em;
+        margin-top: 10px;
+        height: 90px;
+        width: 90px;
+    }
+    </style>
+</head>
+
+<h1 class="center">Vacation Data for
+    <%= vacation.title %>
+  </h1>
+  <div id="divheader">  
+    <div>
+    <img src="./images/heroimagas/images1.jpg" id="logo-img" >
+  </div> 
+    
+  </div>
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <td>
+        <%= vacation.title %>
+      </td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>
+        <%= vacation.description%>
+      </td>
+    </tr>
+    <!-- Need to delete HeroImage from here as shown as logo on left corner -->
+    <tr>
+        <th>HeroImage</th>
+        <td>
+          
+        </td>
+    </tr>
+    <!-- delete end of HeroImage  -->
+
+    <tr>
+        <th>Cuisine</th>
+        <td>
+          <%= vacation.cuisine%>
+        </td>
+    </tr>
+
+    <tr>
+        <th>Cost</th>
+        <td>
+          <%= vacation.cost%>
+        </td>
+    </tr>
+
+    <tr>
+        <th>MaxTravelers</th>
+        <td>
+          <%= vacation.maxTravelers%>
+        </td>
+    </tr>
+
+    <tr>
+        <th>Destination</th>
+        <td>
+          <%= vacation.destination%>
+        </td>
+    </tr>
+
+    <tr>
+      <th>DepartureLocation</th>
+      <td>
+        <%= vacation.departureLocation%>
+      </td>
+    </tr>
+    <tr>
+      <th>DepartureDate</th>
+      <td>$
+        <%= vacation.departureDate%>
+      </td>
+    </tr>
+
+    <tr>
+        <th>ReturnDate</th>
+        <td>$
+          <%= vacation.returnDate%>
+        </td>
+      </tr>
+  </table>
+  
+  
+  <div>
+    <a class="button" href="<%=`/vacations/${vacation._id}/edit`%>">
+      Edit Vacation Details
+    </a>
+  </div>
+  <div>
+    <a class="button" href="<%= `/vacations/${vacation._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+  </div>
+  <div>
+    <a class="button" href="/vacations">View all vacations</a>
+  </div>
+  
+</html>
